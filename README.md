@@ -23,6 +23,23 @@ Avoid your sent email in spam folder.
 </dependency>
 ````
 
+* Or add jar file (lib/dkim-spring-boot-starter.jar) to your project 
+(for example lib folder in project root) and then add to your build.gradle:
+
+```implementation files('lib/dkim-spring-boot-starter.jar')```
+
+* Or for maven:
+
+```
+mvn install:install-file \
+   -Dfile=lib/dkim-spring-boot-starter.jar \
+   -DgroupId=org.mvnsearch.boot \
+   -DartifactId=dkim-spring-boot-starter \
+   -Dversion=1.0.0-SNAPSHOT \
+   -Dpackaging=jar \
+   -DgeneratePom=true
+```
+
 * in application.properties, add following configuration
 ```
 dkim.signing-domain=demo.com
